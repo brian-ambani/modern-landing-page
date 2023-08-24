@@ -57,13 +57,16 @@ img {
 .navbar a {
     color:#fff;
     padding: 10px;
-    margin: 0 auto;
+    margin: 0 5px;
 }
 
-.navbar a:hover {
+.navbar ul a:hover {
     border-bottom: 2px #fff solid;
 }
 
+.navbar .flex {
+    justify-content: space-between;
+}
 /* Showcase */
 .showcase {
     height: 400px;
@@ -104,12 +107,14 @@ img {
 .showcase-form input[type='email'] {
     border: 0;
     border-bottom: 1px solid #b4becb;
-    outline: none;
     width: 100%;
     padding: 3px;
     font-size: 16px;
 }
 
+.showcase-form input:focus {
+    outline: none;
+}
 .showcase::before,.showcase::after {
     content: '';
     position: absolute;
@@ -157,4 +162,77 @@ img {
 
 .cloud .grid {
     grid-template-columns: 4fr 3fr;
+}
+
+/* Langauges */
+
+.languages .flex {
+    flex-wrap: wrap;
+}
+
+.languages .card {
+    text-align: center;
+    margin: 18px 10px 40px;
+    transition: transform 0.2s ease-in;
+}
+
+.languages .card h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.languages .card:hover {
+    transform: translateY(-15px);
+}
+
+/* Footer */
+
+.footer .social a {
+    margin: 0 10px;
+}
+
+
+/* tablets and under */
+@media(max-width: 768px) {
+    .grid,
+    .showcase .grid,
+    .stats .grid,
+    .cli .grid,
+    .cloud .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+    .showcase {
+        height: auto;
+    }
+    
+    .showcase-text {
+        text-align: center;
+        margin-top: 40px;
+    }
+    .showcase-form {
+        justify-self: center;
+        margin: auto;
+    }
+    .cli .grid > *:first-child {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+}
+
+/* Mobile */
+@media(max-width: 500px) {
+    .navbar {
+        height: 110px;
+    }
+
+    .navbar .flex {
+        flex-direction: column;
+    }
+
+    .navbar ul {
+        padding: 10px;
+        background-color: rgba(0,0,0,0.1);
+    }
 }
