@@ -106,8 +106,8 @@
     margin: 15px 0;
 }
 
-.alert i {
-    margin-right: 10px;
+.alert span {
+    margin-left: 10px;
 }
 
 .alert-success {
